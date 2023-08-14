@@ -7,10 +7,18 @@ public class Mover : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float leftRightSpeed = 35f;
+    Rigidbody rigidbody;
+    Vector3 targetPos;
+    private void Start()
+    {
+        rigidbody = GetComponent<Rigidbody>();
+    }
     private void FixedUpdate()
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime, Space.World);
 #if UNITY_ANDROID
+        // Touch parmak = Input.GetTouch(0);
+        // transform.position = Camera.main.ScreenToWorldPoint(new Vector3(parmak.position.x, parmak.position.y, 0f));
 
         /* Touch parmak = Input.GetTouch(0);
          if (Input.touchCount > 0)
@@ -72,11 +80,15 @@ public class Mover : MonoBehaviour
         if (isRight)
         {
             if (this.gameObject.transform.position.x > LevelBoundary.rightSide) return;
-            transform.Translate(Vector3.right * leftRightSpeed * Time.fixedDeltaTime);
+            transform.Translate(Vector3.right * leftRightSpeed * Time.fixedDeltaTime);           // transform.position = Vector3.MoveTowards(currentPos, targetPos, leftRightSpeed * Time.fixedDeltaTime);
+            // transform.position.Set(4f, transform.position.y, transform.position.z);
+            Debug.LogError("girdi");
+            //transform.Translate(Vector3.right * leftRightSpeed * Time.fixedDeltaTime);
         }
         else
         {
             if (this.gameObject.transform.position.x < LevelBoundary.leftSide) return;
+            //transform.position.Set(-4f, transform.position.y, transform.position.z);
             transform.Translate(Vector3.left * leftRightSpeed * Time.fixedDeltaTime);
         }
 

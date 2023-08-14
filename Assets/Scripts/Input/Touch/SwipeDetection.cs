@@ -40,14 +40,14 @@ public class SwipeDetection : MonoBehaviour
             {
                 fingerDown = false;
                 mover.Move(true);
-                //Debug.Log("Swipe Right");
+                Debug.Log("Swipe Right");
             }
             //If player Swipe Left
             else if (Input.touches[0].position.x <= startPos.x - pixelDistToDetect)
             {
                 fingerDown = false;
                 mover.Move(false);
-                //Debug.Log("Swipe Left");
+                Debug.Log("Swipe Left");
             }
         }
         if (fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
