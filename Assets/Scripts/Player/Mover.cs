@@ -6,15 +6,10 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
-    [SerializeField] float leftRightSpeed = 35f;
-    Rigidbody rigidbody;
-    Vector3 targetPos;
-    private void Start()
-    {
-        rigidbody = GetComponent<Rigidbody>();
-    }
+    [SerializeField] float leftRightSpeed = 70f;
     private void FixedUpdate()
     {
+        if(!GameConditions.gameStarted) return;
         transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime, Space.World);
 #if UNITY_ANDROID
         // Touch parmak = Input.GetTouch(0);
