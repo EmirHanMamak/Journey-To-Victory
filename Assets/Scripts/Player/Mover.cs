@@ -9,7 +9,7 @@ public class Mover : MonoBehaviour
     [SerializeField] float leftRightSpeed = 70f;
     private void FixedUpdate()
     {
-        if(!GameConditions.gameStarted) return;
+        if (!GameConditions.gameStarted) return;
         transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime, Space.World);
 #if UNITY_ANDROID
 #endif
@@ -42,6 +42,25 @@ public class Mover : MonoBehaviour
             //transform.position.Set(-4f, transform.position.y, transform.position.z);
             transform.Translate(Vector3.left * leftRightSpeed * Time.fixedDeltaTime);
         }
-
+    }
+    /*private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Wall")
+        {
+            Debug.Log("Trigger CAlisti");
+        }
+    }*/
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            GameConditions.isOnBoundery = true;
+        }
+    }
+        private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            GameConditions.isOnBoundery = false;
+        }
     }
 }
