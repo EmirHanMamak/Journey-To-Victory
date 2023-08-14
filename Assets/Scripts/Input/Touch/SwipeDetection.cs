@@ -15,7 +15,7 @@ public class SwipeDetection : MonoBehaviour
          */
 #if UNITY_ANDROID
         //Get Location of where player touch at the screen
-        if (fingerDown == false && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Moved)
+       /* if (fingerDown == false && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Moved)
         {
             startPos = Input.touches[0].position;
             fingerDown = true;
@@ -53,7 +53,7 @@ public class SwipeDetection : MonoBehaviour
         if (fingerDown && Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Ended)
         {
             fingerDown = false;
-        }
+        }*/
 #endif
 #if UNITY_EDITOR_WIN
         if (fingerDown == false && Input.GetMouseButtonDown(0))
