@@ -9,8 +9,4 @@ public class GameConditions : MonoBehaviour
     private void Start() {
         
     }
-    IEnumerator GameStart()
-    {
-        yield return 0;
-    }
 }
