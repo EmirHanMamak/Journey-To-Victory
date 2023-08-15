@@ -29,9 +29,13 @@ public class GameCanvasManager : MonoBehaviour
         countdown3.SetActive(false);
 
     }
-    public void LoadScene(int LevelIndex)
+    public void LoadScene(int levelIndex)
     {
-        SceneManager.LoadScene(LevelIndex);
+        SceneManager.LoadScene(levelIndex);
+        if(levelIndex == 0)
+        {
+        GameConditions.gameEnded = true;
+        }
     }
     public void PauseButton()
     {

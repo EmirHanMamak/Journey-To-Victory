@@ -11,6 +11,7 @@ public class MenuCanvasManager : MonoBehaviour
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
+        GameConditions.gameEnded = false;
         Time.timeScale = 1f;
     }
     public void SettingsButton()
