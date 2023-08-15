@@ -306,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8257208441722838037}
   - component: {fileID: 5994460472777454514}
+  - component: {fileID: 4412980935900905517}
   m_Layer: 0
   m_Name: LevelControl
   m_TagString: Untagged
@@ -342,6 +343,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   internalRight: 0
   internalLeft: 0
+--- !u!114 &4412980935900905517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1252263685600297255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8c2655b8c01d640ad928184b9d7be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287959461584272964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,7 +1395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &865371315670094606
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2298,6 +2311,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 783674113587602190}
+    - targetCorrespondingSourceObject: {fileID: 3157697616439660261, guid: 4450d99c23b503e479742a3b5b2c8ef5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2956490717212443545}
   m_SourcePrefab: {fileID: 100100000, guid: 4450d99c23b503e479742a3b5b2c8ef5, type: 3}
 --- !u!4 &1944353984980792379 stripped
 Transform:
@@ -2356,3 +2373,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5164556670159859952}
+--- !u!195 &2956490717212443545
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8446161354981834078}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
