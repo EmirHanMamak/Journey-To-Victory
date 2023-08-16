@@ -14,6 +14,5 @@ public class PlayerCrush : MonoBehaviour
         crushSound.Play();
         GameConditions.gameEnded = true;
         GameConditions.gameStarted = false;
-
     }
 }
