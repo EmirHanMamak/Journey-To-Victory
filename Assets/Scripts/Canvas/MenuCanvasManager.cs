@@ -6,7 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuCanvasManager : MonoBehaviour
 {
     [SerializeField] GameObject settingsPanel;
+    [SerializeField] Animator animator;
     SettingsManager settingsManager;
+    private void Start() {
+        animator.SetTrigger("isOnMenu"); 
+    }
     //Temp Functions
     public void PlayButton()
     {
