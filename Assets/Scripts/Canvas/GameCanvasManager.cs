@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameCanvasManager : MonoBehaviour
 {
+    [SerializeField] AudioSource goSound, readySound;
     [SerializeField] GameObject fader, countdown3, countdown2, countdown1, countdowngo;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Animation[] coutDownAnim;
@@ -16,13 +17,21 @@ public class GameCanvasManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         countdown3.SetActive(true);
+        readySound.Play();
         yield return new WaitForSeconds(0.5f);
+
         countdown2.SetActive(true);
+        readySound.Play();
         yield return new WaitForSeconds(0.5f);
+
         countdown1.SetActive(true);
+        readySound.Play();
         yield return new WaitForSeconds(0.5f);
+
         countdowngo.SetActive(true);
         GameConditions.gameStarted = true;
+        goSound.Play();
+
         countdowngo.SetActive(false);
         countdown1.SetActive(false);
         countdown2.SetActive(false);
@@ -32,9 +41,9 @@ public class GameCanvasManager : MonoBehaviour
     public void LoadScene(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
-        if(levelIndex == 0)
+        if (levelIndex == 0)
         {
-        GameConditions.gameEnded = true;
+            GameConditions.gameEnded = true;
         }
     }
     public void PauseButton()
