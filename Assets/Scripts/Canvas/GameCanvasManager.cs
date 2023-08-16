@@ -48,6 +48,7 @@ public class GameCanvasManager : MonoBehaviour
     }
     public void PauseButton()
     {
+        //|| GameConditions.isPlayerCrushed only for dev
         if (GameConditions.gameStarted == false) return;
         Time.timeScale = 0f;
         GameConditions.gameStarted = false;
