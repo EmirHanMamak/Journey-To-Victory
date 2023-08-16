@@ -8,6 +8,12 @@ public class PlayerAnimations : MonoBehaviour
     [SerializeField] Animator animator;
     private void Update() {
         animator.SetBool("gameStarted", GameConditions.gameStarted);
+        if(GameConditions.isPlayerCrushed)
+        {
+        animator.SetTrigger("isPlayerCrushed");
+        GameConditions.isPlayerCrushed = false;
+        }
+
     }
 
 }

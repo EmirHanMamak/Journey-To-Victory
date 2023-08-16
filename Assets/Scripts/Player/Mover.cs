@@ -9,19 +9,21 @@ public class Mover : MonoBehaviour
     public float moveSpeed = 5f;
     [SerializeField] float leftRightSpeed = 70f;
     NavMeshAgent navMeshAgent;
-    private void Start() {
+    private void Start()
+    {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
     private void FixedUpdate()
     {
         if (!GameConditions.gameStarted) return;
+        if (GameConditions.isPlayerCrushed) return;
         navMeshAgent.transform.Translate(Vector3.forward * moveSpeed * Time.fixedDeltaTime, Space.World);
 #if UNITY_ANDROID
 #endif
 #if UNITY_EDITOR_WIN
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-         //   if (this.gameObject.transform.position.x < LevelBoundary.leftSide) return;
+            //   if (this.gameObject.transform.position.x < LevelBoundary.leftSide) return;
             navMeshAgent.transform.Translate(Vector3.left * leftRightSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
@@ -33,7 +35,7 @@ public class Mover : MonoBehaviour
     }
     public void Move(bool isRight)
     {
-                    if(GameConditions.isOnBoundery) return;
+        if (GameConditions.isOnBoundery) return;
         if (isRight)
         {
             //if (this.gameObject.transform.position.x > LevelBoundary.rightSide) return;
@@ -63,7 +65,7 @@ public class Mover : MonoBehaviour
             GameConditions.isOnBoundery = true;
         }
     }
-        private void OnCollisionExit(Collision other)
+    private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "Wall")
         {
