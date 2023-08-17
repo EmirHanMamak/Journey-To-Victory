@@ -11,6 +11,6 @@ public class AccelerationDetection : MonoBehaviour
         float horz = Input.acceleration.x;
         float vert = Input.acceleration.y;
         mover.gameObject.transform.Translate((mover.leftRightSpeed) * horz * Time.fixedDeltaTime, 0, 0);
-        Debug.LogWarning(Input.acceleration.x);
+        Debug.LogWarning(Input.acceleration.x + " and " + vert);
     }
 }

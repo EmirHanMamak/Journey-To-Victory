@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 5020191352693538970, guid: 4450d99c23b503e479742a3b5b2c8ef5,
         type: 3}
       propertyPath: leftRightSpeed
-      value: 100
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1264981281392979494, guid: 4450d99c23b503e479742a3b5b2c8ef5, type: 3}
@@ -653,17 +653,20 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5063998893076107458, guid: 053b12898b986694e8023708c2521aad,
+        type: 3}
     - target: {fileID: 6852370263443709458, guid: 754407bf4231706458832c73ed75cfa9,
         type: 3}
       propertyPath: levels.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5063998893076107458, guid: 053b12898b986694e8023708c2521aad,
+        type: 3}
     - target: {fileID: 6852370263443709458, guid: 754407bf4231706458832c73ed75cfa9,
         type: 3}
       propertyPath: levels.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5063998893076107458, guid: 053b12898b986694e8023708c2521aad,
+        type: 3}
     - target: {fileID: 7785127040522256410, guid: 754407bf4231706458832c73ed75cfa9,
         type: 3}
       propertyPath: m_audioClip

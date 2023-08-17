@@ -14,29 +14,33 @@ public class LevelBoundary : MonoBehaviour
         internalLeft = leftSide;
         internalRight = rightSide;
     }
-    private void OnTriggerEnter(Collider other) {
-        if(gameObject.tag == "RightBorder")
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.tag == "RightBorder")
         {
             //Debug.Log("RightBorder");
-            if(other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player")
             {
                 Debug.Log("rightBorder");
 
                 Mover.canMoveRight = false;
                 Mover.canMoveLeft = true;
-
             }
         }
-                if(gameObject.tag == "LeftBorder")
+        if (gameObject.tag == "LeftBorder")
         {
             //Debug.Log("RightBorder");
-            if(other.gameObject.tag == "Player")
+            if (other.gameObject.tag == "Player")
             {
                 Debug.Log("LeftBorder");
                 Mover.canMoveRight = true;
                 Mover.canMoveLeft = false;
-
             }
         }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Mover.canMoveRight = true;
+        Mover.canMoveLeft = true;
     }
 }

@@ -6,8 +6,8 @@ public class Mover : MonoBehaviour
 {
     public static bool canMoveRight = true;
     public static bool canMoveLeft = true;
-    public float moveSpeed = 3;
-    public float leftRightSpeed = 4;
+    public float moveSpeed = 15f;
+    public float leftRightSpeed = 15f;
 
     void Update()
     {
