@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+    public Animator animator;
+    public static bool animationPlayOnce = false;
     private void Update() {
         animator.SetBool("gameStarted", GameConditions.gameStarted);
         if(GameConditions.isPlayerCrushed)
@@ -13,6 +14,13 @@ public class PlayerAnimations : MonoBehaviour
         animator.SetTrigger("isPlayerCrushed");
         GameConditions.isPlayerCrushed = false;
         }
+        if(GameConditions.isJumping && animationPlayOnce == false)
+        {
+            animationPlayOnce= true;
+       animator.SetTrigger("isJumping");
+        }
+       // GameConditions.isJumping = false;
+
 
     }
 
