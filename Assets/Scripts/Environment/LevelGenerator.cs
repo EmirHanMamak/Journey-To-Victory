@@ -8,16 +8,15 @@ using Unity.AI.Navigation;
 public class LevelGenerator : MonoBehaviour
 {
     // For 3 diffrent env
-    public GameObject [] levels;
-    public int zPos = 200;
+    public GameObject[] levels;
+    public static int zPos = 200;
     public int secRandNum = -1;
     public bool createSection = false;
-    [SerializeField] int levelindex = 0;
-    [SerializeField] int secondOfCreate = 15;
-
-
-    private void Update() {
-        if(createSection == false)
+    public static int levelindex = 0;
+    [SerializeField] int secondOfCreate = 6;
+    private void Update()
+    {
+        if (createSection == false)
         {
             createSection = true;
             StartCoroutine(GenerateSection());
@@ -32,5 +31,4 @@ public class LevelGenerator : MonoBehaviour
         yield return new WaitForSeconds(secondOfCreate);
         createSection = false;
     }
-
 }

@@ -435,6 +435,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelControl
       objectReference: {fileID: 0}
+    - target: {fileID: 3328646298817267105, guid: 915ae0286c764324aa0c964b00e6c26c,
+        type: 3}
+      propertyPath: secondOfCreate
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7032594842662394265, guid: 915ae0286c764324aa0c964b00e6c26c,
         type: 3}
       propertyPath: m_LocalPosition.x

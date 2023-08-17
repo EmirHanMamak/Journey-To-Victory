@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfd4020050828449bfaf3bd3a6b96bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  internalRight: 0
   internalLeft: 0
+  internalRight: 0
 --- !u!114 &3328646298817267105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,8 +63,6 @@ MonoBehaviour:
   - {fileID: 7671062878790681179, guid: 270e43b5accc65c47a1948bedccc022b, type: 3}
   - {fileID: 5805056656707332321, guid: 7b14b6f2de58f8c45ac54b9e7d1d18d3, type: 3}
   - {fileID: 1850276872385435410, guid: 79b6ded5519983245ac5d6f91b5fb47e, type: 3}
-  zPos: 200
   secRandNum: -1
   createSection: 0
-  levelindex: 0
-  secondOfCreate: 2
+  secondOfCreate: 6

@@ -6,6 +6,7 @@ public class Mover : MonoBehaviour
 {
     public static bool canMoveRight = true;
     public static bool canMoveLeft = true;
+    public static float moverCurrentZPos = 0f;
     public float moveSpeed = 15f;
     public float leftRightSpeed = 15f;
     /*JUMP*/
@@ -14,6 +15,7 @@ public class Mover : MonoBehaviour
     public bool comingDown = false; 
     private void Start() {
         GameConditions.isJumping = false;
+        moverCurrentZPos = this.transform.position.z;
     }
 
     void Update()
@@ -21,7 +23,7 @@ public class Mover : MonoBehaviour
         if (!GameConditions.gameStarted) return;
         if (GameConditions.isPlayerCrushed) return;
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
-
+        moverCurrentZPos = transform.position.z;
         HorizontalMovment();
         VerticalMovment();
     }
