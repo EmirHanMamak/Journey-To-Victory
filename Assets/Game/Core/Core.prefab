@@ -549,13 +549,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5020191352693538970, guid: 4450d99c23b503e479742a3b5b2c8ef5,
         type: 3}
+      propertyPath: jumpSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5020191352693538970, guid: 4450d99c23b503e479742a3b5b2c8ef5,
+        type: 3}
       propertyPath: moveSpeed
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5020191352693538970, guid: 4450d99c23b503e479742a3b5b2c8ef5,
         type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 1821880516814144331, guid: 4450d99c23b503e479742a3b5b2c8ef5,
+        type: 3}
+    - target: {fileID: 5020191352693538970, guid: 4450d99c23b503e479742a3b5b2c8ef5,
+        type: 3}
       propertyPath: leftRightSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904859636525361732, guid: 4450d99c23b503e479742a3b5b2c8ef5,
+        type: 3}
+      propertyPath: field of view
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1264981281392979494, guid: 4450d99c23b503e479742a3b5b2c8ef5, type: 3}
@@ -652,7 +668,7 @@ PrefabInstance:
     - target: {fileID: 6852370263443709458, guid: 754407bf4231706458832c73ed75cfa9,
         type: 3}
       propertyPath: secondOfCreate
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6852370263443709458, guid: 754407bf4231706458832c73ed75cfa9,
         type: 3}

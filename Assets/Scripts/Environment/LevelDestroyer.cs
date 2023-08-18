@@ -15,7 +15,7 @@ public class LevelDestroyer : MonoBehaviour
     {
         if (thisObjectName == destroyObjectName)
         {
-        StartCoroutine(DestroyClone());
+            StartCoroutine(DestroyClone());
         }
 
     }
@@ -24,13 +24,13 @@ public class LevelDestroyer : MonoBehaviour
         while (true)
         {
             Debug.LogWarning(Mover.moverCurrentZPos);
-            if (Mover.moverCurrentZPos > this.transform.position.z + this.transform.position.z - this.transform.position.z / 2)
+            if (Mover.moverCurrentZPos > this.transform.position.z + this.transform.position.z)
             {
                 Debug.LogError(this.gameObject.transform.position);
                 Destroy(this.gameObject);
                 Debug.Log("DestroyClone");
             }
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.1f);
         }
 
     }

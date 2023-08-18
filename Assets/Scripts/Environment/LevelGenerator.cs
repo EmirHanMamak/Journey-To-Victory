@@ -13,7 +13,6 @@ public class LevelGenerator : MonoBehaviour
     public int secRandNum = -1;
     public bool createSection = false;
     public static int levelindex = 0;
-    [SerializeField] int secondOfCreate = 6;
     private void Update()
     {
         if (createSection == false)
@@ -25,10 +24,19 @@ public class LevelGenerator : MonoBehaviour
     IEnumerator GenerateSection()
     {
         // For 3 diffrent env
-        secRandNum = Random.Range(0, 3);
-        levelindex++;
-        Instantiate(levels[secRandNum], new Vector3(0, 0, zPos * levelindex), Quaternion.identity);
-        yield return new WaitForSeconds(secondOfCreate);
-        createSection = false;
+        while (true)
+        {
+            if (Mover.moverCurrentZPos > (zPos * levelindex) / 2)
+            {
+                secRandNum = Random.Range(0, 3);
+                levelindex++;
+                Instantiate(levels[secRandNum], new Vector3(0, 0, zPos * levelindex), Quaternion.identity);
+                createSection = false;
+            }
+            yield return new WaitForSeconds(0.1f);
+
+        }
+
+
     }
 }
