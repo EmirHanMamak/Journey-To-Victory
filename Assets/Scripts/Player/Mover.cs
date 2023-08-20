@@ -15,6 +15,8 @@ public class Mover : MonoBehaviour
     public bool comingDown = false; 
     private void Start() {
         GameConditions.isJumping = false;
+        GameConditions.gameEnded = false;
+        GameConditions.isPlayerCrushed = false;
         moverCurrentZPos = this.transform.position.z;
     }
 

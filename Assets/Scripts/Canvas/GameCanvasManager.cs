@@ -8,7 +8,8 @@ public class GameCanvasManager : MonoBehaviour
     [SerializeField] AudioSource goSound, readySound;
     [SerializeField] GameObject fader, countdown3, countdown2, countdown1, countdowngo;
     [SerializeField] GameObject pauseMenu;
-    [SerializeField] Animation[] coutDownAnim;
+    [SerializeField] GameObject gameOverMenu;
+    //[SerializeField] Animation[] coutDownAnim;
     private void Start()
     {
         StartCoroutine(CountSequence());
@@ -46,14 +47,18 @@ public class GameCanvasManager : MonoBehaviour
             GameConditions.gameEnded = true;
         }
     }
+    private void PauseMenu(bool isOpened)
+    {
+        pauseMenu.SetActive(isOpened);
+    }
     public void PauseButton()
     {
         //|| GameConditions.isPlayerCrushed only for dev
         if (GameConditions.gameStarted == false) return;
-        Time.timeScale = 0f;
-        GameConditions.gameStarted = false;
+        //GameConditions.gameStarted = false;
         PauseMenu(true);
-
+        Debug.Log("chanfgexc");
+        Time.timeScale = 0f;
     }
     public void ContinueButton()
     {
@@ -61,8 +66,20 @@ public class GameCanvasManager : MonoBehaviour
         Time.timeScale = 1f;
         PauseMenu(false);
     }
-    private void PauseMenu(bool isOpened)
+    public void ReturnMainMenuButton()
     {
-        pauseMenu.SetActive(isOpened);
+        SceneManager.LoadScene(0);
+    }
+    public void RestartGameButton()
+    {
+        CollectableControl.coinCount = 0;
+        gameOverMenu.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        //CollectableControl.scoreCount = 0;
+        /*CollectableControl.coinCount = 0;
+        CollectableControl.distanceCount = 0;
+        GameConditions.gameStarted = false;
+        GameConditions.gameStarted = false;
+        Mover.moverCurrentZPos = 0f;*/
     }
 }

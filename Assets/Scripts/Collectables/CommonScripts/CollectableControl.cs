@@ -6,31 +6,33 @@ using UnityEngine.UI;
 
 public class CollectableControl : MonoBehaviour
 {
-    public TextMeshProUGUI coinCountText;
-    public TextMeshProUGUI distanceCountText;
+    //INSIDE OF GAME LABELS
+    public TextMeshProUGUI gameCoinCountText, gameFoodCount, gameMedicCount, gameTotalScoreCount;
+    //GAMEOVER MENU LABELS
+    public TextMeshProUGUI gameOverFoodCount, gameOverMedicCount, gameOverTotalScoreCount;
     public static int coinCount = 0;
-    public static int distanceCount = 0;
+    //public static int foodCount = 0;
+    //public static int medicCount = 0;
+    public static int totalScoreCount = 0;
+    //  public static int scoreCount = 0;
     public bool addingDistance = false;
     Mover mover;
 
 
     void Update()
     {
-        coinCountText.text = coinCount.ToString();
-        distanceCountText.text = distanceCount.ToString();
-        if(!GameConditions.gameStarted) return;
+        gameCoinCountText.text = coinCount.ToString();
+        gameTotalScoreCount.text = totalScoreCount.ToString();
+        if (!GameConditions.gameStarted) return;
         if (addingDistance == false)
         {
             addingDistance = true;
-            StartCoroutine(AddingDistance());
+            StartCoroutine(AddingScore());
         }
-        if (GameConditions.gameEnded == false) return;
-        coinCount = 0;
-        distanceCount = 0;
     }
-    IEnumerator AddingDistance()
+    IEnumerator AddingScore()
     {
-        distanceCount++;
+        totalScoreCount++;
         yield return new WaitForSeconds(0.25f);
         addingDistance = false;
     }

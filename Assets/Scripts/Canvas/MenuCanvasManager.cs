@@ -14,9 +14,7 @@ public class MenuCanvasManager : MonoBehaviour
     //Temp Functions
     public void PlayButton()
     {
-        SceneManager.LoadScene(1);
-        GameConditions.gameEnded = false;
-        Time.timeScale = 1f;
+        StartCoroutine(PlayButtonPress());
     }
     public void SettingsButton()
     {
@@ -33,5 +31,14 @@ public class MenuCanvasManager : MonoBehaviour
     public void SettingsReturnButton()
     {
         settingsPanel.SetActive(false);
+    }
+    IEnumerator PlayButtonPress()
+    {
+        animator.SetTrigger("isOnMenuPlayButton");
+        yield return new WaitForSeconds(1.2f);
+        SceneManager.LoadScene(1);
+        GameConditions.gameEnded = false;
+        GameConditions.gameStarted = false;
+        Time.timeScale = 1f;
     }
 }

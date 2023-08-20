@@ -10,6 +10,7 @@ public class SettingsManager : MonoBehaviour
         CT_ACCELERATION = 1
     };
     public GameObject swipeSetting, accelerationSetting;
+    public GameObject gameOverMenu;
     int inputMode = -1;
     private void Awake()
     {
@@ -24,5 +25,9 @@ public class SettingsManager : MonoBehaviour
             swipeSetting.SetActive(false);
             accelerationSetting.SetActive(true);
         }
+    }
+    private void Update() {
+        if(!GameConditions.isPlayerCrushed) return;
+
     }
 }
