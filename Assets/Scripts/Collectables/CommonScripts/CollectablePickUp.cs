@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class CollectablePickUp : MonoBehaviour
 {
-    public AudioSource coinPickUpSound;
+    public AudioSource collectablePickUpSound;
     void OnTriggerEnter(Collider other) {
-        coinPickUpSound.Play();
+        collectablePickUpSound.Play();
         CollectableControl.coinCount++;
         Destroy(this.gameObject);
     }
