@@ -16,6 +16,5 @@ public class PlayerCrush : MonoBehaviour
         camera.GetComponent<Animator>().enabled = true;
         Debug.Log("Suan Triggerlandi");
         crushSound.Play();
-
     }
 }

@@ -12,8 +12,9 @@ public class Mover : MonoBehaviour
     /*JUMP*/
     public Animator playerObject;
     [SerializeField] float jumpSpeed = 15f;
-    public bool comingDown = false; 
-    private void Start() {
+    public bool comingDown = false;
+    private void Start()
+    {
         GameConditions.isJumping = false;
         GameConditions.gameEnded = false;
         GameConditions.isPlayerCrushed = false;
@@ -54,9 +55,9 @@ public class Mover : MonoBehaviour
             {
                 GameConditions.isJumping = true;
                 StartCoroutine(JumpSequence());
-               // playerObject.SetTrigger("isJumping");
+                // playerObject.SetTrigger("isJumping");
             }
-        } 
+        }
         if (GameConditions.isJumping == true)
         {
             if (comingDown == false)

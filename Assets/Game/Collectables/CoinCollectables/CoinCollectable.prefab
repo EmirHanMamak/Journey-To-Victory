@@ -100,17 +100,17 @@ PrefabInstance:
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.33877707
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 19.294304
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
@@ -151,6 +151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CoinCollectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680009283375185778, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: CoinPickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -360,7 +360,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 5}
+  m_LocalScale: {x: 4, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1529390151243546887}
@@ -583,17 +583,17 @@ PrefabInstance:
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.98105717
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 20.02
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
@@ -634,6 +634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GunCollectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680009283375185778, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_TagString
+      value: GunPickUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
