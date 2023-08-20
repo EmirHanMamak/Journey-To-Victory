@@ -55,7 +55,7 @@ public class GameCanvasManager : MonoBehaviour
     {
         //|| GameConditions.isPlayerCrushed only for dev
         if (GameConditions.gameStarted == false) return;
-        //GameConditions.gameStarted = false;
+        GameConditions.gameStarted = false;
         PauseMenu(true);
         Debug.Log("chanfgexc");
         Time.timeScale = 0f;
@@ -68,6 +68,8 @@ public class GameCanvasManager : MonoBehaviour
     }
     public void ReturnMainMenuButton()
     {
+        GameConditions.gameStarted = true;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
     public void RestartGameButton()

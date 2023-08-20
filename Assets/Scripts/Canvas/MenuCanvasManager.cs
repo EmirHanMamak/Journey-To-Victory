@@ -35,7 +35,7 @@ public class MenuCanvasManager : MonoBehaviour
     IEnumerator PlayButtonPress()
     {
         animator.SetTrigger("isOnMenuPlayButton");
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(1);
         GameConditions.gameEnded = false;
         GameConditions.gameStarted = false;
