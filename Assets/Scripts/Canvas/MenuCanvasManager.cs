@@ -11,14 +11,28 @@ public class MenuCanvasManager : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Slider soundSlider;
     [SerializeField] TextMeshProUGUI volumeAmount;
+    [SerializeField] TextMeshProUGUI totalScore, totalCoin, totalgun, totalfood, totalmedic;
+    [SerializeField] Button swipeButton, accelerationButton;
     private void Start()
     {
         animator.SetTrigger("isOnMenu");
         soundSlider.GetComponent<Slider>();
+        totalScore.text = PlayerPrefs.GetInt(TagList.bestScoreTag).ToString();
         LoadSound();
 
     }
+    /*Button Selection Functions*/
+    public void SelectButton(Button isGonnaSelect)
+    {
+        isGonnaSelect.GetComponent<Image>().color = Color.green;
+    }
+    public void DeSelectButton(Button isGonnaDeSelect)
+    {
+        isGonnaDeSelect.GetComponent<Image>().color = Color.red;
+    }
     //Temp Functions
+
+
     public void PlayButton()
     {
         StartCoroutine(PlayButtonPress());
@@ -26,6 +40,20 @@ public class MenuCanvasManager : MonoBehaviour
     public void SettingsButton()
     {
         settingsPanel.SetActive(true);
+        if (PlayerPrefs.HasKey("inputMode") == false)
+        {
+            PlayerPrefs.SetInt("inputMode", 0);
+        }
+        if (PlayerPrefs.GetInt("inputMode") == 0)
+        {
+            SelectButton(swipeButton);
+            DeSelectButton(accelerationButton);
+        }
+        if (PlayerPrefs.GetInt("inputMode") == 1)
+        {
+            SelectButton(accelerationButton);
+            DeSelectButton(swipeButton);
+        }
     }
     public void SettingsSwipeButton()
     {

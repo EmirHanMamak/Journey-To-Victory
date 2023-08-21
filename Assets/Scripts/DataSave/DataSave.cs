@@ -33,6 +33,8 @@ public class DataSave : MonoBehaviour
             AddToData(TagList.gunPickUpTag, totalGunCount);
             AddToData(TagList.foodPickUpTag, totalFoodCount);
             AddToData(TagList.medicPickUpTag, totalMedicCount);
+            BestScoreSave();
+            PlayerPrefs.Save();
             canSave = false;
         }
         /*totalCoinCountForCheck = totalCoinCount;
@@ -69,8 +71,6 @@ public class DataSave : MonoBehaviour
     public void AddToData(string dataName, int score)
     {
         PlayerPrefs.SetInt(dataName, score + PlayerPrefs.GetInt(dataName));
-        BestScoreSave();
-        PlayerPrefs.Save();
     }
     public void BestScoreSave()
     {
