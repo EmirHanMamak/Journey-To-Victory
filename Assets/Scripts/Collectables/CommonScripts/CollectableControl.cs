@@ -21,7 +21,10 @@ public class CollectableControl : MonoBehaviour
     bool saveData = true;
     // bool canSave = false;
     Mover mover;
-
+    private void Awake()
+    {
+        RestartData();
+    }
 
     void Update()
     {
@@ -69,5 +72,6 @@ public class CollectableControl : MonoBehaviour
         foodCount = 0;
         medicCount = 0;
         gunCount = 0;
+        scoreCount = 0;
     }
 }

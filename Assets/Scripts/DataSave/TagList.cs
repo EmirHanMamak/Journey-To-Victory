@@ -12,4 +12,6 @@ public class TagList
     /*SCORE TAGS*/
     public static string bestScoreTag = "BestScore";
 
+    /*OTHER TAGS*/
+    public static string settingsSoundVolume = "soundVolume";
 }
