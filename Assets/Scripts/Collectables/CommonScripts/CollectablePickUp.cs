@@ -28,7 +28,7 @@ public class CollectablePickUp : MonoBehaviour
             CollectableControl.scoreCount += 10;
 
         }
-        else if (this.gameObject.tag == TagList.healthPickUpTag)
+        else if (this.gameObject.tag == TagList.medicPickUpTag)
         {
             CollectableControl.medicCount++;
             CollectableControl.scoreCount += 15;

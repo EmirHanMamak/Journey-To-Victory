@@ -142,16 +142,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3918907719289146270, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: goSound
-      value: 
-      objectReference: {fileID: 3045660964389072314}
-    - target: {fileID: 3918907719289146270, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: readySound
-      value: 
-      objectReference: {fileID: 6402427767656852360}
     - target: {fileID: 4099764520108754053, guid: 9ce4f10077c17994f80899051644212a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -176,26 +166,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5875741033369567035, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326318592704828450, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: gameOverFoodCount
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326318592704828450, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: gameOverMedicCount
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326318592704828450, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: gameOverTotalScoreCount
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6690544530481353327, guid: 9ce4f10077c17994f80899051644212a,
         type: 3}
@@ -328,13 +298,16 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 698775602462008101, guid: 9ce4f10077c17994f80899051644212a, type: 3}
-    - {fileID: 4303987278730501341, guid: 9ce4f10077c17994f80899051644212a, type: 3}
-    - {fileID: 1909857969097717470, guid: 9ce4f10077c17994f80899051644212a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce4f10077c17994f80899051644212a, type: 3}
+--- !u!1 &3146043596242188239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1156724962908342288, guid: 9ce4f10077c17994f80899051644212a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4297980794792771551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7457090237099208112 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6690544530481353327, guid: 9ce4f10077c17994f80899051644212a,
@@ -531,7 +504,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3146043596242188239}
     - target: {fileID: 5575234782608606093, guid: 754407bf4231706458832c73ed75cfa9,
         type: 3}
       propertyPath: m_Name
@@ -542,21 +515,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 754407bf4231706458832c73ed75cfa9, type: 3}
---- !u!82 &3045660964389072314 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5215960257156477829, guid: 754407bf4231706458832c73ed75cfa9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7072494974972124735}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5068565362820135013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2626062450252637786, guid: 754407bf4231706458832c73ed75cfa9,
-    type: 3}
-  m_PrefabInstance: {fileID: 7072494974972124735}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &6402427767656852360 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4251242567564948919, guid: 754407bf4231706458832c73ed75cfa9,
     type: 3}
   m_PrefabInstance: {fileID: 7072494974972124735}
   m_PrefabAsset: {fileID: 0}

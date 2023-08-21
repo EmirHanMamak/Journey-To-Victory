@@ -26,10 +26,10 @@ public class CollectableControl : MonoBehaviour
     void Update()
     {
         UpadateText();
-        if(GameConditions.isPlayerCrushed && saveData)
+        if (GameConditions.isPlayerCrushed && saveData)
         {
-        CollectableSave();
-        saveData = false;
+            CollectableSave();
+            saveData = false;
         }
 
         if (!GameConditions.gameStarted) return;
@@ -50,11 +50,11 @@ public class CollectableControl : MonoBehaviour
     public void CollectableSave()
     {
         {
-                Debug.Log("SAVE THE DATA");
-                DataSave.totalCoinCount += coinCount;
-                DataSave.totalFoodCount += foodCount;
-                DataSave.totalMedicCount += medicCount;
-                DataSave.totalGunCount += gunCount;
+            Debug.Log("SAVE THE DATA");
+            DataSave.totalCoinCount += coinCount;
+            DataSave.totalFoodCount += foodCount;
+            DataSave.totalMedicCount += medicCount;
+            DataSave.totalGunCount += gunCount;
         }
     }
     IEnumerator AddingScore()
@@ -63,9 +63,11 @@ public class CollectableControl : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         addingScore = false;
     }
-        public void AddToData(string dataName, int score)
+    public static void RestartData()
     {
-        PlayerPrefs.SetInt(dataName, score);
-        PlayerPrefs.Save();
+        coinCount = 0;
+        foodCount = 0;
+        medicCount = 0;
+        gunCount = 0;
     }
 }

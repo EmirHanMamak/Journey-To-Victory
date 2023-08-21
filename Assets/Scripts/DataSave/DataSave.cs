@@ -23,12 +23,16 @@ public class DataSave : MonoBehaviour
     private void Update()
     {
         totalCoinCountForCheck = PlayerPrefs.GetInt(TagList.coinPickUpTag);
+        totalGunCountForCheck = PlayerPrefs.GetInt(TagList.gunPickUpTag);
+        totalFoodCountForCheck = PlayerPrefs.GetInt(TagList.foodPickUpTag);
+        totalMedicCountForCheck = PlayerPrefs.GetInt(TagList.medicPickUpTag);
+        bestScoreForCheck = PlayerPrefs.GetInt(TagList.bestScoreTag);
         if (GameConditions.isPlayerCrushed && canSave)
         {
             AddToData(TagList.coinPickUpTag, totalCoinCount);
             AddToData(TagList.gunPickUpTag, totalGunCount);
             AddToData(TagList.foodPickUpTag, totalFoodCount);
-            AddToData(TagList.healthPickUpTag, totalMedicCount);
+            AddToData(TagList.medicPickUpTag, totalMedicCount);
             canSave = false;
         }
         /*totalCoinCountForCheck = totalCoinCount;
@@ -41,30 +45,39 @@ public class DataSave : MonoBehaviour
 
     void HasKeyExist()
     {
-        if (!PlayerPrefs.HasKey("totalCoinCount"))
+        if (!PlayerPrefs.HasKey(TagList.coinPickUpTag))
         {
-            PlayerPrefs.SetInt("totalCoinCount", 0);
+            PlayerPrefs.SetInt(TagList.coinPickUpTag, 0);
         }
-        if (!PlayerPrefs.HasKey("totalGunCount"))
+        if (!PlayerPrefs.HasKey(TagList.gunPickUpTag))
         {
-            PlayerPrefs.SetInt("totalGunCount", 0);
+            PlayerPrefs.SetInt(TagList.gunPickUpTag, 0);
         }
-        if (!PlayerPrefs.HasKey("totalFoodCount"))
+        if (!PlayerPrefs.HasKey(TagList.foodPickUpTag))
         {
-            PlayerPrefs.SetInt("totalFoodCount", 0);
+            PlayerPrefs.SetInt(TagList.foodPickUpTag, 0);
         }
-        if (!PlayerPrefs.HasKey("totalMedicCount"))
+        if (!PlayerPrefs.HasKey(TagList.medicPickUpTag))
         {
-            PlayerPrefs.SetInt("totalMedicCount", 0);
+            PlayerPrefs.SetInt(TagList.medicPickUpTag, 0);
         }
-        if (!PlayerPrefs.HasKey("bestScore"))
+        if (!PlayerPrefs.HasKey(TagList.bestScoreTag))
         {
-            PlayerPrefs.SetInt("bestScore", 0);
+            PlayerPrefs.SetInt(TagList.bestScoreTag, 0);
         }
     }
     public void AddToData(string dataName, int score)
     {
         PlayerPrefs.SetInt(dataName, score + PlayerPrefs.GetInt(dataName));
+        BestScoreSave();
         PlayerPrefs.Save();
+    }
+    public void BestScoreSave()
+    {
+        if (CollectableControl.scoreCount > bestScore)
+        {
+            bestScore = CollectableControl.scoreCount;
+            PlayerPrefs.SetInt(TagList.bestScoreTag, bestScore);
+        }
     }
 }
