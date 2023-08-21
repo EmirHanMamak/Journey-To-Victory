@@ -12,6 +12,10 @@ public class LevelGenerator : MonoBehaviour
     public int secRandNum = -1;
     public bool createSection = false;
     public static int levelindex = 0;
+    private void Awake()
+    {
+        levelindex = 0;
+    }
     private void Update()
     {
         if (createSection == false)

@@ -9,12 +9,36 @@ public class DataSave : MonoBehaviour
     public static int totalFoodCount;
     public static int totalMedicCount;
     public static int bestScore;
+    public int totalCoinCountForCheck;
+    public int totalGunCountForCheck;
+    public int totalFoodCountForCheck;
+    public int totalMedicCountForCheck;
+    public int bestScoreForCheck;
+    public static bool canSave = true;
 
     void Start()
     {
         HasKeyExist();
     }
-    
+    private void Update()
+    {
+        totalCoinCountForCheck = PlayerPrefs.GetInt(TagList.coinPickUpTag);
+        if (GameConditions.isPlayerCrushed && canSave)
+        {
+            AddToData(TagList.coinPickUpTag, totalCoinCount);
+            AddToData(TagList.gunPickUpTag, totalGunCount);
+            AddToData(TagList.foodPickUpTag, totalFoodCount);
+            AddToData(TagList.healthPickUpTag, totalMedicCount);
+            canSave = false;
+        }
+        /*totalCoinCountForCheck = totalCoinCount;
+        totalGunCountForCheck = totalGunCount;
+        totalFoodCountForCheck = totalFoodCount;
+        totalMedicCountForCheck = totalMedicCount;
+        bestScoreForCheck = bestScore;*/
+
+    }
+
     void HasKeyExist()
     {
         if (!PlayerPrefs.HasKey("totalCoinCount"))
@@ -40,6 +64,7 @@ public class DataSave : MonoBehaviour
     }
     public void AddToData(string dataName, int score)
     {
-        PlayerPrefs.SetInt(dataName, score);
+        PlayerPrefs.SetInt(dataName, score + PlayerPrefs.GetInt(dataName));
+        PlayerPrefs.Save();
     }
 }

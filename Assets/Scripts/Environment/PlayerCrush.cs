@@ -9,9 +9,10 @@ public class PlayerCrush : MonoBehaviour
     public GameObject camera;
     private void OnTriggerEnter(Collider other)
     {
+        GameConditions.isPlayerCrushed = true;
+        DataSave.canSave = true;
         GameConditions.gameEnded = true;
         GameConditions.gameStarted = false;
-        GameConditions.isPlayerCrushed = true;
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
         camera.GetComponent<Animator>().enabled = true;
         Debug.Log("Suan Triggerlandi");

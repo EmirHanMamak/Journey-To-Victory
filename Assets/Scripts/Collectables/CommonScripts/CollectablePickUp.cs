@@ -16,6 +16,7 @@ public class CollectablePickUp : MonoBehaviour
         /*
          * Gun = 30, Coin = 20, Health = 15, Food = 10 Point
          */
+        if (!GameConditions.gameStarted) return;
         if (this.gameObject.tag == TagList.coinPickUpTag)
         {
             CollectableControl.coinCount++;
@@ -29,7 +30,7 @@ public class CollectablePickUp : MonoBehaviour
         }
         else if (this.gameObject.tag == TagList.healthPickUpTag)
         {
-            CollectableControl.healthCount++;
+            CollectableControl.medicCount++;
             CollectableControl.scoreCount += 15;
 
         }

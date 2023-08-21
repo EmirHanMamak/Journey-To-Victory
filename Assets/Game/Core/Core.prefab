@@ -177,6 +177,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5875741033369567035, guid: 9ce4f10077c17994f80899051644212a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318592704828450, guid: 9ce4f10077c17994f80899051644212a,
+        type: 3}
+      propertyPath: gameOverFoodCount
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318592704828450, guid: 9ce4f10077c17994f80899051644212a,
+        type: 3}
+      propertyPath: gameOverMedicCount
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326318592704828450, guid: 9ce4f10077c17994f80899051644212a,
+        type: 3}
+      propertyPath: gameOverTotalScoreCount
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6690544530481353327, guid: 9ce4f10077c17994f80899051644212a,
         type: 3}
       propertyPath: m_Pivot.x
@@ -308,7 +328,10 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 698775602462008101, guid: 9ce4f10077c17994f80899051644212a, type: 3}
+    - {fileID: 4303987278730501341, guid: 9ce4f10077c17994f80899051644212a, type: 3}
+    - {fileID: 1909857969097717470, guid: 9ce4f10077c17994f80899051644212a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ce4f10077c17994f80899051644212a, type: 3}
