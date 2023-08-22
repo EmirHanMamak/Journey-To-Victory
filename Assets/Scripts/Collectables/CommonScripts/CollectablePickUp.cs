@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class CollectablePickUp : MonoBehaviour
 {
-    public AudioSource collectablePickUpSound;
+    private AudioSource collectablePickUpSound;
+    private void Start() {
+        collectablePickUpSound = GetComponent<AudioSource>();
+    }
     void OnTriggerEnter(Collider other)
     {
-        CollectableIncrease();
-        Destroy(this.gameObject);
+        collectablePickUpSound.volume = 1000f;
         collectablePickUpSound.Play();
+         Debug.Log($"Clip: {collectablePickUpSound.clip.name}");
+        CollectableIncrease();
+
+        Destroy(this.gameObject);
     }
     void CollectableIncrease()
     {
