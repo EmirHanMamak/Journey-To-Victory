@@ -28,7 +28,11 @@ public class MenuCanvasManager : MonoBehaviour
     }
     public void DeSelectButton(Button isGonnaDeSelect)
     {
-        isGonnaDeSelect.GetComponent<Image>().color = Color.red;
+        //isGonnaDeSelect.GetComponent<Image>().color = Color.red;
+        //isGonnaDeSelect.GetComponent<Image>().color = Color.red;
+        isGonnaDeSelect.GetComponent<Image>().color = new Vector4(227f, 50f, 0f, 0.8f);
+
+
     }
     //Temp Functions
 
@@ -76,7 +80,7 @@ public class MenuCanvasManager : MonoBehaviour
     }
     public void SaveSound()
     {
-        PlayerPrefs.SetInt(TagList.settingsSoundVolume, ((int)AudioListener.volume));
+        PlayerPrefs.SetInt(TagList.settingsSoundVolume, (int)soundSlider.value);
     }
     public void LoadSound()
     {
