@@ -14,4 +14,5 @@ public class TagList
 
     /*OTHER TAGS*/
     public static string settingsSoundVolume = "soundVolume";
+    public static string gameFirstOpen = "gameFirstOpen";
 }

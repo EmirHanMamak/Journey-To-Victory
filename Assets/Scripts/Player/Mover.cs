@@ -15,6 +15,7 @@ public class Mover : MonoBehaviour
     public bool comingDown = false;
     private void Start()
     {
+        AudioListener.volume = PlayerPrefs.GetInt(TagList.settingsSoundVolume) / 80f;
         GameConditions.isJumping = false;
         GameConditions.gameEnded = false;
         GameConditions.isPlayerCrushed = false;

@@ -47,7 +47,7 @@ public class DataSave : MonoBehaviour
 
     void HasKeyExist()
     {
-        if (!PlayerPrefs.HasKey(TagList.coinPickUpTag))
+        /*if (!PlayerPrefs.HasKey(TagList.coinPickUpTag))
         {
             PlayerPrefs.SetInt(TagList.coinPickUpTag, 0);
         }
@@ -66,7 +66,7 @@ public class DataSave : MonoBehaviour
         if (!PlayerPrefs.HasKey(TagList.bestScoreTag))
         {
             PlayerPrefs.SetInt(TagList.bestScoreTag, 0);
-        }
+        }*/
     }
     public void AddToData(string dataName, int score)
     {

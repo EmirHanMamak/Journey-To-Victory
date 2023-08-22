@@ -92,11 +92,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2758130319765901232, guid: 9ce4f10077c17994f80899051644212a,
-        type: 3}
-      propertyPath: gameOverMenu
-      value: 
-      objectReference: {fileID: 3146043596242188239}
     - target: {fileID: 3076277319140756359, guid: 9ce4f10077c17994f80899051644212a,
         type: 3}
       propertyPath: m_AnchorMax.y

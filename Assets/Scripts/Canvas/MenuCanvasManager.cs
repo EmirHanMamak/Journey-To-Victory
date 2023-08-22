@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MenuCanvasManager : MonoBehaviour
 {
-    [SerializeField] GameObject settingsPanel;
+    [SerializeField] GameObject settingsPanel, infoPanel;
     [SerializeField] Animator animator;
     [SerializeField] Slider soundSlider;
     [SerializeField] TextMeshProUGUI volumeAmount;
@@ -15,8 +15,16 @@ public class MenuCanvasManager : MonoBehaviour
     [SerializeField] Button swipeButton, accelerationButton;
     private void Awake()
     {
+        if (PlayerPrefs.GetInt(TagList.gameFirstOpen) == 0)
+        {
+            //First Start Game 
+            InfoPanelOpen(infoPanel);
+            PlayerPrefs.SetInt(TagList.settingsSoundVolume, 50);
+            soundSlider.value = PlayerPrefs.GetInt(TagList.settingsSoundVolume);
+        }
         LoadTotalCollectable();
         LoadSound();
+        SetSound();
         animator.SetTrigger("isOnMenu");
     }
     private void Start()
@@ -44,6 +52,16 @@ public class MenuCanvasManager : MonoBehaviour
     public void PlayButton()
     {
         StartCoroutine(PlayButtonPress());
+    }
+    public void InfoCloseButton(GameObject infoPanel)
+    {
+        infoPanel.SetActive(false);
+        PlayerPrefs.SetInt(TagList.gameFirstOpen, 1);
+    }
+    public void InfoPanelOpen(GameObject infoPanel)
+    {
+        infoPanel.SetActive(true);
+        PlayerPrefs.SetInt(TagList.gameFirstOpen, 1);
     }
     public void SettingsButton()
     {
@@ -86,7 +104,15 @@ public class MenuCanvasManager : MonoBehaviour
     }
     public void SettingsRestartGameYesButon(GameObject restartButtonMenu)
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey(TagList.coinPickUpTag);
+        settingsPanel.SetActive(false);
+        PlayerPrefs.DeleteKey(TagList.foodPickUpTag);
+        PlayerPrefs.DeleteKey(TagList.gunPickUpTag);
+        PlayerPrefs.DeleteKey(TagList.medicPickUpTag);
+        PlayerPrefs.DeleteKey(TagList.bestScoreTag);
+        PlayerPrefs.SetInt(TagList.gameFirstOpen, 0);
+        PlayerPrefs.SetInt(TagList.settingsSoundVolume, 50);
+
         Awake();
         restartButtonMenu.SetActive(false);
 
