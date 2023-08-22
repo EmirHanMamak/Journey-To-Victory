@@ -13,12 +13,16 @@ public class MenuCanvasManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI volumeAmount;
     [SerializeField] TextMeshProUGUI totalScore, totalCoin, totalgun, totalfood, totalmedic;
     [SerializeField] Button swipeButton, accelerationButton;
+    private void Awake()
+    {
+        LoadTotalCollectable();
+        LoadSound();
+        animator.SetTrigger("isOnMenu");
+    }
     private void Start()
     {
-        animator.SetTrigger("isOnMenu");
+
         soundSlider.GetComponent<Slider>();
-        totalScore.text = PlayerPrefs.GetInt(TagList.bestScoreTag).ToString();
-        LoadSound();
 
     }
     /*Button Selection Functions*/
@@ -72,6 +76,21 @@ public class MenuCanvasManager : MonoBehaviour
         settingsPanel.SetActive(false);
         PlayerPrefs.Save();
     }
+    public void SettingsRestartGameButton(GameObject restartButtonMenu)
+    {
+        restartButtonMenu.SetActive(true);
+    }
+    public void SettingsRestartGameNoButon(GameObject restartButtonMenu)
+    {
+        restartButtonMenu.SetActive(false);
+    }
+    public void SettingsRestartGameYesButon(GameObject restartButtonMenu)
+    {
+        PlayerPrefs.DeleteAll();
+        Awake();
+        restartButtonMenu.SetActive(false);
+
+    }
     public void SetSound()
     {
         AudioListener.volume = soundSlider.value / 100f;
@@ -97,5 +116,13 @@ public class MenuCanvasManager : MonoBehaviour
         GameConditions.gameEnded = false;
         GameConditions.gameStarted = false;
         Time.timeScale = 1f;
+    }
+    void LoadTotalCollectable()
+    {
+        totalScore.text = PlayerPrefs.GetInt(TagList.bestScoreTag).ToString();
+        totalCoin.text = PlayerPrefs.GetInt(TagList.coinPickUpTag).ToString();
+        totalgun.text = PlayerPrefs.GetInt(TagList.gunPickUpTag).ToString();
+        totalfood.text = PlayerPrefs.GetInt(TagList.foodPickUpTag).ToString();
+        totalmedic.text = PlayerPrefs.GetInt(TagList.medicPickUpTag).ToString();
     }
 }

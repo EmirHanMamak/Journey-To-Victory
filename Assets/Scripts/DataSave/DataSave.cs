@@ -80,4 +80,8 @@ public class DataSave : MonoBehaviour
             PlayerPrefs.SetInt(TagList.bestScoreTag, bestScore);
         }
     }
+    public void LoadDataInt(TagList tagName)
+    {
+        PlayerPrefs.GetInt(tagName.ToString());
+    }
 }
