@@ -9,7 +9,7 @@ public class PlayerCrush : MonoBehaviour
     //public GameObject camera;
     private void OnTriggerEnter(Collider other)
     {
-        crushSound.Play();
+        //crushSound.Play();
         GameConditions.isPlayerCrushed = true;
         DataSave.canSave = true;
         GameConditions.gameEnded = true;

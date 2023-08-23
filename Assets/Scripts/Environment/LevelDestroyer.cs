@@ -23,12 +23,12 @@ public class LevelDestroyer : MonoBehaviour
     {
         while (true)
         {
-            Debug.LogWarning(Mover.moverCurrentZPos);
+            //Debug.LogWarning(Mover.moverCurrentZPos);
             if (Mover.moverCurrentZPos > this.transform.position.z + this.transform.position.z)
             {
-                Debug.LogError(this.gameObject.transform.position);
+                //Debug.LogError(this.gameObject.transform.position);
                 Destroy(this.gameObject);
-                Debug.Log("DestroyClone");
+                //Debug.Log("DestroyClone");
             }
             yield return new WaitForSeconds(0.1f);
         }
