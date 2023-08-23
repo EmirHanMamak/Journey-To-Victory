@@ -8,6 +8,7 @@ public class CollectableControl : MonoBehaviour
     public TextMeshProUGUI gameCoinCountText, gameFoodCount, gameMedicCount, gameGunCount, gameScoreCount;
     //GAMEOVER MENU LABELS
     public TextMeshProUGUI gameOverFoodCount, gameOverMedicCount, gameOverTotalScoreCount;
+    public TextMeshProUGUI fpsCounter;
     public static int coinCount = 0;
     public static int foodCount = 0;
     public static int medicCount = 0;
@@ -47,6 +48,9 @@ public class CollectableControl : MonoBehaviour
         gameMedicCount.text = medicCount.ToString();
         gameGunCount.text = gunCount.ToString();
         gameScoreCount.text = scoreCount.ToString();
+
+        fpsCounter.text = (1f / Time.deltaTime).ToString();
+
     }
     public void CollectableSave()
     {

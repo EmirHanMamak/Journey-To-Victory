@@ -68,6 +68,56 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.74214244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LocalReferencePoint.x
+      value: -0.0075295717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LocalReferencePoint.y
+      value: -0.017421424
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LocalReferencePoint.z
+      value: 0.00017476082
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.05885157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.024800723
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[0].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[1].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625865500496280318, guid: a7831745dca63fe47b6083113ea3ecc4,
+        type: 3}
+      propertyPath: m_LODs.Array.data[2].renderers.Array.data[0].renderer
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

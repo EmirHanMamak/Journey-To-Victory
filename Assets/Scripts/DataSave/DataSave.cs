@@ -27,10 +27,10 @@ public class DataSave : MonoBehaviour
         bestScoreForCheck = PlayerPrefs.GetInt(TagList.bestScoreTag);
         if (GameConditions.isPlayerCrushed && canSave)
         {
-            AddToData(TagList.coinPickUpTag, totalCoinCount);
-            AddToData(TagList.gunPickUpTag, totalGunCount);
-            AddToData(TagList.foodPickUpTag, totalFoodCount);
-            AddToData(TagList.medicPickUpTag, totalMedicCount);
+            AddToData(TagList.coinPickUpTag, CollectableControl.coinCount);
+            AddToData(TagList.gunPickUpTag, CollectableControl.gunCount);
+            AddToData(TagList.foodPickUpTag, CollectableControl.foodCount);
+            AddToData(TagList.medicPickUpTag, CollectableControl.medicCount);
             BestScoreSave();
             PlayerPrefs.Save();
             canSave = false;

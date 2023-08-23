@@ -25,6 +25,7 @@ public class PlayerMotor : MonoBehaviour
         GameConditions.gameEnded = false;
         GameConditions.isPlayerCrushed = false;
         moverCurrentZPos = this.transform.position.z;
+        Application.targetFrameRate = 60;
     }
     private void Update()
     {
@@ -87,9 +88,9 @@ public class PlayerMotor : MonoBehaviour
             dir.y = 0f;
             transform.forward = Vector3.Lerp(transform.forward, dir, TURN_SPEED);
         }
-        speed += 0.001f;
-        animator.SetFloat("slowRunMultiplier", animator.GetFloat("slowRunMultiplier") + 0.00005f);
-        if(speed >= 30)
+        speed += 0.006f;
+        animator.SetFloat("slowRunMultiplier", animator.GetFloat("slowRunMultiplier") + 0.0001f);
+        if(speed >= 35f)
         {
             animator.SetBool(TagList.isFastRunning, true);
         }

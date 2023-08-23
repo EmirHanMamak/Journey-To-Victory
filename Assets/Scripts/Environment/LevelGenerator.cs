@@ -27,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
         {
             if (PlayerMotor.moverCurrentZPos > (zPos * levelindex) / 2)
             {
-                secRandNum = Random.Range(0, 3);
+                secRandNum = Random.Range(0, 4);
                 levelindex++;
                 Instantiate(levels[secRandNum], new Vector3(0, 0, zPos * levelindex), Quaternion.identity);
                 createSection = false;
