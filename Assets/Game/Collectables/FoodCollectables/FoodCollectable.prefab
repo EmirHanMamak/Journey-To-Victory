@@ -36,37 +36,37 @@ PrefabInstance:
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46869755
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.92
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.27724
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999988
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.0015440917
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
@@ -93,6 +93,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: FoodPickUp
       objectReference: {fileID: 0}
+    - target: {fileID: 4680009283375185778, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 109
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783361506519958062, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: rotateSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783361506519958062, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: transformObject
+      value: 
+      objectReference: {fileID: 3135844618429741752}
     - target: {fileID: 8706779016114378317, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_audioClip
@@ -195,6 +210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bread
+      objectReference: {fileID: 0}
+    - target: {fileID: 839233260410868668, guid: d6846055e97b9ac42a6e11a3ea4f1237,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 109
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8369077278640403282, guid: d6846055e97b9ac42a6e11a3ea4f1237, type: 3}
