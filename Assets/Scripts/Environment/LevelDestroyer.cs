@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelDestroyer : MonoBehaviour
@@ -24,7 +23,7 @@ public class LevelDestroyer : MonoBehaviour
         while (true)
         {
             //Debug.LogWarning(Mover.moverCurrentZPos);
-            if (Mover.moverCurrentZPos > this.transform.position.z + this.transform.position.z)
+            if (PlayerMotor.moverCurrentZPos > this.transform.position.z + this.transform.position.z)
             {
                 //Debug.LogError(this.gameObject.transform.position);
                 Destroy(this.gameObject);

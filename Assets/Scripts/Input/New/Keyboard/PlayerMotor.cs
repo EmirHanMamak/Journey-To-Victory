@@ -1,29 +1,36 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class PlayerMotor : MonoBehaviour
 {
-    private const float LANE_DISTANCE = 8f;
+    private const float LANE_DISTANCE = 6f;
     private const float TURN_SPEED = 0.0002f;
-
+    public static float moverCurrentZPos = 0f;
     private CharacterController characterController;
     public Animator animator;
-    private float jumpForce = 8f;
-    private float gravity = 12f;
-    private float verticalVelocity;
-    private float speed = 7f;
+    public float jumpForce = 8f;
+    public float gravity = 20f;
+    public float verticalVelocity;
+    public float speed = 7f;
     private int desiredLane = 1; // Left = 0, Middle = 1, Right = 2
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        AudioListener.volume = PlayerPrefs.GetInt(TagList.settingsSoundVolume) / 80f;
+        animator.SetBool(TagList.isFastRunning, false);
+        GameConditions.isJumping = false;
+        GameConditions.gameEnded = false;
+        GameConditions.isPlayerCrushed = false;
+        moverCurrentZPos = this.transform.position.z;
     }
     private void Update()
     {
         if (!GameConditions.gameStarted) return;
+        if (GameConditions.isPlayerCrushed) return;
+        moverCurrentZPos = transform.position.z;
         if (Input.GetKeyDown(KeyCode.LeftArrow) || MobileInput.Instance.SwipeLeft)
         {
             MoveLane(false);
@@ -49,15 +56,14 @@ public class PlayerMotor : MonoBehaviour
         if (isGrounded) // Grounded
         {
             verticalVelocity = -0.1f;
-           // GameConditions.isJumping = true;
-            animator.SetBool("isGrounded", isGrounded); 
+            // GameConditions.isJumping = true;
+            animator.SetBool("isGrounded", isGrounded);
             if (Input.GetKeyDown(KeyCode.Space) || MobileInput.Instance.SwipeUp)
             {
                 //Jump
                 verticalVelocity = jumpForce;
                 animator.SetTrigger("isJumping");
                 StartCoroutine(JumpSequence());
-                                animator.SetTrigger("isLanding");
             }
         }
         else
@@ -81,8 +87,14 @@ public class PlayerMotor : MonoBehaviour
             dir.y = 0f;
             transform.forward = Vector3.Lerp(transform.forward, dir, TURN_SPEED);
         }
+        speed += 0.001f;
+        animator.SetFloat("slowRunMultiplier", animator.GetFloat("slowRunMultiplier") + 0.00005f);
+        if(speed >= 30)
+        {
+            animator.SetBool(TagList.isFastRunning, true);
+        }
     }
-    void MoveLane(bool goingRight)
+    public void MoveLane(bool goingRight)
     {
         desiredLane += (goingRight) ? 1 : -1;
         desiredLane = Mathf.Clamp(desiredLane, 0, 2);
@@ -111,9 +123,9 @@ public class PlayerMotor : MonoBehaviour
         Debug.DrawRay(groundRay.origin, groundRay.direction, Color.cyan, 1f);
         return (Physics.Raycast(groundRay, 0.2f + 0.1f));
     }
-        IEnumerator JumpSequence()
+    IEnumerator JumpSequence()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.01f);
         GameConditions.isJumping = false;
         PlayerAnimations.animationPlayOnce = false;
     }

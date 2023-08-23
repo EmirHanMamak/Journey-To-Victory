@@ -1,9 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using Unity.AI.Navigation;
-
 public class LevelGenerator : MonoBehaviour
 {
     // For 3 diffrent env
@@ -29,7 +25,7 @@ public class LevelGenerator : MonoBehaviour
         // For 3 diffrent env
         while (true)
         {
-            if (Mover.moverCurrentZPos > (zPos * levelindex) / 2)
+            if (PlayerMotor.moverCurrentZPos > (zPos * levelindex) / 2)
             {
                 secRandNum = Random.Range(0, 3);
                 levelindex++;

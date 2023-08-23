@@ -342,7 +342,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524315497715185699}
-  - component: {fileID: 7618829501185921180}
   m_Layer: 0
   m_Name: American Old Rifle
   m_TagString: Untagged
@@ -370,27 +369,6 @@ Transform:
   - {fileID: 5330108752847388772}
   m_Father: {fileID: 8663052201574770757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7618829501185921180
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526515737564774309}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.035, y: 0.19, z: 1.03}
-  m_Center: {x: 0, y: -0.04, z: 0.07}
 --- !u!1 &1526593678511555129
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +543,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1081383857497638494, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.7575785
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081383857497638494, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.87878925
+      objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -583,17 +571,17 @@ PrefabInstance:
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.98105717
+      value: 0.12716293
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.09
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100
+      value: 47.80623
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
@@ -642,9 +630,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8706779016114378317, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
+      propertyPath: MinDistance
+      value: 1.1775131
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706779016114378317, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 56d8b7e8f83e2244383deac44ebe45f7, type: 3}
+    - target: {fileID: 8706779016114378317, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

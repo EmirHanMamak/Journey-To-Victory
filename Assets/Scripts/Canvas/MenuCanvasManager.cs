@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +19,8 @@ public class MenuCanvasManager : MonoBehaviour
             //First Start Game 
             InfoPanelOpen(infoPanel);
             PlayerPrefs.SetInt(TagList.settingsSoundVolume, 50);
+            PlayerPrefs.SetInt(TagList.inputMode, 0);
+
             soundSlider.value = PlayerPrefs.GetInt(TagList.settingsSoundVolume);
         }
         LoadTotalCollectable();
@@ -83,11 +84,11 @@ public class MenuCanvasManager : MonoBehaviour
     }
     public void SettingsSwipeButton()
     {
-        PlayerPrefs.SetInt("inputMode", 0);
+        PlayerPrefs.SetInt(TagList.inputMode, 0);
     }
     public void SettingsAccelerationButton()
     {
-        PlayerPrefs.SetInt("inputMode", 1);
+        PlayerPrefs.SetInt(TagList.inputMode, 1);
     }
     public void SettingsReturnButton()
     {

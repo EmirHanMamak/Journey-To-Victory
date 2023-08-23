@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectablePickUp : MonoBehaviour
@@ -8,10 +6,10 @@ public class CollectablePickUp : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         collectablePickUpSound.Play();
+        Destroy(this.gameObject);
          Debug.Log($"Clip: {collectablePickUpSound.clip.name}");
         CollectableIncrease();
 
-        Destroy(this.gameObject);
     }
     void CollectableIncrease()
     {

@@ -36,17 +36,17 @@ PrefabInstance:
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5619974
+      value: 0.46869755
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.92
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.5
+      value: 32.27724
       objectReference: {fileID: 0}
     - target: {fileID: 3601550550622764954, guid: f7ba04b6f0800f847bf19803e6d020dc,
         type: 3}
@@ -98,6 +98,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 56d8b7e8f83e2244383deac44ebe45f7, type: 3}
+    - target: {fileID: 8706779016114378317, guid: f7ba04b6f0800f847bf19803e6d020dc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -191,7 +196,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bread
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8369077278640403282, guid: d6846055e97b9ac42a6e11a3ea4f1237, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

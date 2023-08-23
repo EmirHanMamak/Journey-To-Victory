@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TagList
@@ -14,5 +12,8 @@ public class TagList
 
     /*OTHER TAGS*/
     public static string settingsSoundVolume = "soundVolume";
-    public static string gameFirstOpen = "gameFirstOpen";
+    public static string gameFirstOpen = "gameFirstOpen"; 
+    public static string inputMode = "inputMode"; // 0 Swipe , 1 Acceleration
+    public static string isFastRunning = "isFastRunning"; 
+
 }

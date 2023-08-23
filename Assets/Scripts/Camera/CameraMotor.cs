@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
     public Transform lookAt;
-    public Vector3 offSet = new Vector3(0, 5f, -10f);
+    public Vector3 offSet = new Vector3(0, 5f, -5f);
     void Awake()
     {
         transform.position = lookAt.position + offSet;
