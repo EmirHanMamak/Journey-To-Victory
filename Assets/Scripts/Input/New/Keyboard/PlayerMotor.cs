@@ -24,11 +24,11 @@ public class PlayerMotor : MonoBehaviour
     private void Update()
     {
         if (!GameConditions.gameStarted) return;
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || MobileInput.Instance.SwipeLeft)
         {
             MoveLane(false);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || MobileInput.Instance.SwipeRight)
         {
             MoveLane(true);
         }
@@ -51,12 +51,13 @@ public class PlayerMotor : MonoBehaviour
             verticalVelocity = -0.1f;
            // GameConditions.isJumping = true;
             animator.SetBool("isGrounded", isGrounded); 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || MobileInput.Instance.SwipeUp)
             {
                 //Jump
                 verticalVelocity = jumpForce;
                 animator.SetTrigger("isJumping");
                 StartCoroutine(JumpSequence());
+                                animator.SetTrigger("isLanding");
             }
         }
         else
@@ -64,10 +65,10 @@ public class PlayerMotor : MonoBehaviour
             verticalVelocity -= (gravity * Time.deltaTime);
             //GameConditions.isJumping = false;
             //Fast Falling Mecanic
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || MobileInput.Instance.SwipeDown)
             {
                 verticalVelocity = -jumpForce;
-
+                animator.SetTrigger("isLanding");
             }
         }
         moveVector.y = verticalVelocity;
